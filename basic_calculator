@@ -1,0 +1,66 @@
+def add(x,y):
+    return x+y
+def subtract(x,y):
+    return x-y
+def multiply(x,y):
+    return x*y
+def divide(x,y):
+    if y!=0:
+        return x/y
+    else:
+        return "error:cannot divide by zero"
+        
+def calculator():
+    print("simple calculator")
+
+    print('select operation:')
+    print('1.add')
+    print('2.subtract')
+    print('3.multiply')
+    print('4.divide')
+    print('5.exit')
+
+    while True:
+        choice = input('/n Enter choice : (1/2/3/4/5)')
+        if choice == '5':
+            print('Thankyou for using calculator')
+            break   
+    if choice in ['1','2','3','4']:
+
+        try:
+
+            num1 = float(input("enter fist number:"))
+            num2 = float(input("enter second number:"))
+            if choice == '1':
+                result = add(num1,num2)
+                print(f'{num1}+{num2}= {result}')
+
+            elif choice == '2':
+                result = subtract(num1,num2)
+
+            elif choice == '3':
+                result = multiply(num1,num2)
+                print(f'{num1}*{num2}={result}')
+
+            elif choice =='4':
+                result = divide(num1,num2)
+                print(f'{num1}/{num2}={result}')
+
+        except ValueError:
+
+            print("invalid input. please enter valid numbers") #except catches error that happened in try block.when float can convert something like text.
+
+    else:
+
+        print('invalid choice. please enter 1,2,3,4 or 5')
+
+if __name__ == "__main__":
+    calculator()
+
+        
+
+            
+ 
+
+
+    
